@@ -20,8 +20,12 @@ h1{
     align-items: center;
 }
 
-button {
-    padding: 10px 20px;
+.porNombre{
+    max-width: 50%;
+}
+
+.button {
+    padding: 100px 20px;
 }
 
 .main{

@@ -1,20 +1,44 @@
 import React from 'react'
+import Form from 'react-bootstrap/Form'
 
-export const Buscador = () => {
+
+export const Buscador = ({Personajes, setPersonajes, capturoValor}) => {
+
+    const onChange = (event) =>{
+      const valor = event.target.value
+      capturoValor(valor)
+    }
+
   return (
     <div className='Buscador border'>
-            <select name="TipoDeFiltro" id="categorias" className='m-3 fs-3 text-center p-2'>
-                <option value="1">con mas apariciones en los comics</option>
-                <option value="2">con mas eventos importantes</option>
-            </select>
-            <input type="text" placeholder='buscar por nombre' className='m-3  fs-4 p-2' />
-            <div>
-                <button className='m-3 border fs-3'>buscar</button>
-            </div>
-            <select name="TipoDeFiltro2" id="categorias2" className='m-3 fs-3 text-center p-2'>
-                <option value="4">ascendente A-Z</option>
-                <option value="5">descendente Z-A</option>
-            </select>
+      <div className='porNombre'>
+      <Form.Control
+        type="text"
+        name='nombres'
+        placeholder="buscar por nombre de personaje"
+        onChange={onChange}
+      />
+      </div>
+      <div>
+        <Form.Select aria-label="Default select example">
+          <option>ordenar por</option>
+          <option value="1">Orden alfabetico ascendente A-Z</option>
+          <option value="2">Orden alfabetico descendente Z-A</option>
+          <option value="3">mayor aparicion en comics</option>
+      </Form.Select>
+      </div>
+
     </div>
   )
 }
+
+
+
+
+
+
+
+    //   const datosFiltrados = Personajes.filter((personaje) =>
+    // Object.values(personaje).some((personajeYaFiltrado) =>
+    // personajeYaFiltrado.toLowerCase().includes(valor)))
+    // setPersonajes(datosFiltrados)
