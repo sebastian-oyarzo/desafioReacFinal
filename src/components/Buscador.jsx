@@ -1,13 +1,20 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 
-export const Buscador = ({Personajes, setPersonajes, capturoValor}) => {
+export const Buscador = ({Personajes, setPersonajes, capturoValor, forSelect}) => {
 
     const onChange = (event) =>{
       const valor = event.target.value
       capturoValor(valor)
     }
+
+    const selector = (e) =>{
+      const click = e.target.value
+      forSelect(click)
+    }
+
 
   return (
     <div className='Buscador border'>
@@ -20,11 +27,10 @@ export const Buscador = ({Personajes, setPersonajes, capturoValor}) => {
       />
       </div>
       <div>
-        <Form.Select aria-label="Default select example">
-          <option>ordenar por</option>
-          <option value="1">Orden alfabetico ascendente A-Z</option>
-          <option value="2">Orden alfabetico descendente Z-A</option>
-          <option value="3">mayor aparicion en comics</option>
+        <Form.Select aria-label="Default select example" onChange={selector} >
+          <option defaultChecked value="nada">ordenar por</option>
+          <option  value="A-Z">Orden alfabetico ascendente A-Z</option>
+          <option  value="Z-A">Orden alfabetico descendente Z-A</option>
       </Form.Select>
       </div>
 
