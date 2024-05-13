@@ -1,8 +1,11 @@
 *{
   background-color: #3b3b3b;
-  color: #a0a0a0;
+  color: #fdf8f8;
   margin: 0%;
   padding: 0%;
   font-family: 'Trebuchet MS', Arial, sans-serif;
   font-size: medium;
+}
+h5 {
+  color: #fdf8f8;
 }

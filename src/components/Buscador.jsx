@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 
-export const Buscador = ({Personajes, setPersonajes, capturoValor, forSelect}) => {
+export const Buscador = ({capturoValor, forSelect}) => {
 
     const onChange = (event) =>{
       const valor = event.target.value

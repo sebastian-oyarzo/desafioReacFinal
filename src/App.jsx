@@ -3,7 +3,6 @@ import { Buscador } from './components/Buscador'
 import { MiApi } from './components/MiApi'
 import { Navdar } from './components/Navdar'
 import { useEffect, useState, } from 'react'
-import { Footer } from './components/Footer'
 
 function App() {
   const [Personajes, setPersonajes] = useState([])
@@ -53,7 +52,6 @@ const nombresYaFiltrados = Personajes.filter((Personas) =>
       <Navdar />
           <Buscador capturoValor={capturoValor} forSelect={forSelect}/>
           <MiApi setPersonajes={setPersonajes} Personajes={Personajes} nombresYaFiltrados={nombresYaFiltrados}/>
-          <Footer />
     </>
 )}
 export default App
